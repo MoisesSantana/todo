@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Header, Input, TaskInfo } from './components';
+import { EmptyTodoList, Header, Input, TaskInfo } from './components';
 
 interface ITodo {
   task: string;
@@ -32,6 +32,7 @@ function App() {
           numberOfTasks={numberOfTasks}
           numberOfFinishedTasks={numberOfFinishedTasks}
         />
+        {numberOfTasks === 0 && <EmptyTodoList />}
       </main>
     </div>
   );
