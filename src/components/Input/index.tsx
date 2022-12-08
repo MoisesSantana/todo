@@ -26,7 +26,7 @@ export function Input({ saveTodo }: IInputProps) {
       />
       <button
         type="submit"
-        className="bg-emerald-600 rounded-lg flex justify-center items-center w-24 p-2.5 text-stone-100 gap-1.5 shadow-md shadow-stone-900/600"
+        className="bg-emerald-600 rounded-lg flex justify-center items-center p-2.5 px-9 text-stone-100 gap-1.5 shadow-md shadow-stone-900/600"
       >
         Criar
         <img src={PlusCircle} alt="plus" />
