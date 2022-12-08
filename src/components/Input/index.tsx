@@ -2,12 +2,12 @@ import { FormEvent, useState } from 'react';
 import PlusCircle from '../../assets/plus-circle.svg';
 import { IInputProps } from './@types';
 
-export function Input({ saveTodo }: IInputProps) {
+export function Input({ saveTask }: IInputProps) {
   const [inputValue, setInputValue] = useState('');
 
   const submitTodo = (e: FormEvent) => {
     e.preventDefault();
-    saveTodo(inputValue);
+    saveTask(inputValue);
     setInputValue('');
   };
 

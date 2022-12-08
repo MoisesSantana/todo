@@ -5,7 +5,7 @@ import { EmptyTodoList } from '.';
 describe('EmptyTodoList', () => {
   it('should render information about to do list is empty', () => {
     render(<EmptyTodoList />);
-    const imgElement = screen.getByRole('img', { name: 'clipboard' });
+    const imgElement = screen.getByRole('img', { name: 'EmptyList' });
     expect(imgElement).toHaveAttribute('src');
 
     const firstMessageElement = screen.getByText(

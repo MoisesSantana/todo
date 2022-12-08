@@ -5,7 +5,7 @@ import { Input } from '.';
 
 describe('Input', () => {
   it('should render text box and button', () => {
-    render(<Input saveTodo={() => {}} />);
+    render(<Input saveTask={() => {}} />);
 
     const inputElement = screen.getByRole('textbox');
     expect(inputElement).toBeInTheDocument();
@@ -16,7 +16,7 @@ describe('Input', () => {
 
   it('should change text in text box', async () => {
     const user = userEvent.setup();
-    render(<Input saveTodo={() => {}} />);
+    render(<Input saveTask={() => {}} />);
 
     const inputElement = screen.getByRole('textbox');
     expect(inputElement).toBeInTheDocument();
@@ -28,7 +28,7 @@ describe('Input', () => {
 
   it('should clear text box after submit task', async () => {
     const user = userEvent.setup();
-    render(<Input saveTodo={() => {}} />);
+    render(<Input saveTask={() => {}} />);
 
     const inputElement = screen.getByRole('textbox');
     expect(inputElement).toBeInTheDocument();

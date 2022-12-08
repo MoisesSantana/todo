@@ -22,6 +22,8 @@ module.exports = {
   rules: {
     'react/react-in-jsx-scope': 0,
     'import/prefer-default-export': 0,
+    'jsx-a11y/click-events-have-key-events': 0,
+    'jsx-a11y/no-noninteractive-element-interactions': 0,
     'prettier/prettier': ['error', { endOfLine: 'auto' }],
   },
 };
