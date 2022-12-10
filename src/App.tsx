@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { EmptyTodoList, Header, Input, TaskInfo, TodoList } from './components';
+import { todoListPersist, updateTodoList } from './helpers/persist';
 
 interface ITodo {
   task: string;
@@ -9,16 +10,21 @@ interface ITodo {
 function App() {
   const [todoList, setTodoList] = useState([] as ITodo[]);
 
+  useEffect(() => {
+    const persist = updateTodoList;
+    setTodoList(persist);
+  }, []);
+
   const saveTask = (inputValue: string) => {
-    setTodoList((prevState) => [
-      ...prevState,
-      { task: inputValue, finished: false },
-    ]);
+    const updatedTodo = [...todoList, { task: inputValue, finished: false }];
+    setTodoList([...updatedTodo]);
+    todoListPersist(updatedTodo);
   };
 
   const removeTask = (task: string) => {
     const updatedTodo = todoList.filter((curTask) => curTask.task !== task);
     setTodoList([...updatedTodo]);
+    todoListPersist(updatedTodo);
   };
 
   const handleFinishedTasks = (task: string) => {
@@ -29,6 +35,7 @@ function App() {
     });
 
     setTodoList([...updatedTodo]);
+    todoListPersist(updatedTodo);
   };
 
   const numberOfTasks = todoList.length;
